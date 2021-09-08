@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Tabs } from "antd";
+import RegistrationForm from "./RegistrationForm";
+import { Login } from "./Login";
 
-function App() {
+const App = () => {
+  const { TabPane } = Tabs;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="wrapper__logo">LOGO</div>
+      <div className="wrapper__title">Queue System</div>
+
+      {/* tabs */}
+      <Tabs type="card">
+        <TabPane tab="Login" key="1">
+          <Login />
+        </TabPane>
+        <TabPane tab="SignUp" key="2">
+          <RegistrationForm />
+        </TabPane>
+      </Tabs>
+      {/* Akhir tabs */}
     </div>
   );
-}
+};
 
 export default App;
